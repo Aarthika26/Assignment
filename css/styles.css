@@ -1,28 +1,129 @@
-#wrapper {width:95%;  margin: 0 auto; background-color: red; }
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-#header {width:100%; }
+body {
+    font-family: "Open Sans";
+    font-size: 14px;
+    background-color: #F1F2F7;
+}
 
-#content {width:100%; }
+#wrapper,
+footer {
+    background-color: #FFFFFF;
+}
 
-#sidebar {width:100%; }
+.navbar a {
+    font-size: 16px;
+    color: #535353;
+}
 
-#footer {width:100%; }
+p.label {
+    color: gray;
+}
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "|";
+}
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-
-#wrapper {width:90%;  margin: 0 auto; }
-
-#content {width:70%; float:left; }
-
-#sidebar {width:30%; float:right; }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
+header,
+footer {
+    width: 100%;
+    clear: both;
 }
 
 
+#content,
+#sidebar {
+    display: inline-block;
+}
+
+#content.toggle {
+    width: calc(100% - 250px - .5rem);
+    float: right;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #262933;
+    color: #fff;
+    transition: all 0.4s;
+    height: 100vh;
+    float: left;
+    display: none !important;
+}
+
+#sidebar.show {
+    display: block !important;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #1b1d24;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: #A2A3B7;
+}
+
+#sidebar ul li a:hover {
+    color: #262933;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #99CA3B;
+    background: #1b1d24;
+}
+
+#sidebar .contact-link a {
+    color: #99CA3B;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #1b1d24;
+}
+
+@media (max-width: 768px) {
+    #sidetotop {
+        display: block;
+    }
+
+    #sidebar.show {
+        display: none !important;
+    }
+
+    #content.toggle {
+        width: 100%;
+    }
+}
