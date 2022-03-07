@@ -39,7 +39,7 @@ footer {
 #content.toggle {
     width: calc(100% - 250px - .5rem);
     float: right;
-}
+    }
 
 #sidebar {
     min-width: 250px;
